@@ -182,12 +182,11 @@ function removeDupes(arr) {
     let noDupes = []
     for (let i = arr.length - 1; i >= 0; i--) {
         noDupes.push(arr[i])
-        console.log(arr[i]);
+        /* console.log(arr[i]); */
 
         for (let index = 0; index < i; index++) {
-            console.log("LOL", arr[i]);
-
-            console.log("xxx", arr[index]);
+            /* console.log("LOL", arr[i]);
+            console.log("xxx", arr[index]); */
             if (arr[i] === arr[index]) {
                 noDupes.pop(arr[i])
             }

@@ -106,7 +106,7 @@ console.log("The numbers in your array above ", lowerLimit, " is ", aboveLwrLim)
 console.log();
 console.log("ESERCIZIO 6");
 
-const yourString = "I topi non avevano nipoti, perché non avevano fratelli né sorelle"
+const yourString = "I topi non avevano nipoti perché non avevano fratelli né sorelle"
 const biggestWordInString = longestWord(yourString)
 
 function longestWord(string) {
@@ -152,10 +152,51 @@ console.log("The array that mixes and orderes yours is ", ordered_n_mixed_Arr);
 console.log();
 console.log("ESERCIZIO 8");
 
+/* const yourString = "I topi non avevano nipoti perché non avevano fratelli né sorelle" */
+const yourArr = yourString.split(" ")
+console.log(yourArr);
+const value2Count = "nipoti"
 
+const occurrences = countOccurrences(yourArr, value2Count)
+
+function countOccurrences(arr, val) {
+    let occ = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] == val) {
+            occ += 1
+        }
+    }
+    return occ
+}
+
+console.log("The word", value2Count, "has", occurrences, " occurrences in your sentence (", yourString, ")");
 
 /* ################################################### */
 console.log();
 console.log("ESERCIZIO 9");
 
+/* const yourString = "I topi non avevano nipoti, perché non avevano fratelli né sorelle" 
+const yourArr = yourString.split(" ") */
 
+function removeDupes(arr) {
+    let noDupes = []
+    for (let i = arr.length - 1; i >= 0; i--) {
+        noDupes.push(arr[i])
+        console.log(arr[i]);
+
+        for (let index = 0; index < i; index++) {
+            console.log("LOL", arr[i]);
+
+            console.log("xxx", arr[index]);
+            if (arr[i] === arr[index]) {
+                noDupes.pop(arr[i])
+            }
+        }
+    }
+    return noDupes.reverse()
+}
+
+const noDupesArr = removeDupes(yourArr)
+
+console.log("Your array is:", yourArr);
+console.log("Your array without duplicates is:", noDupesArr);
